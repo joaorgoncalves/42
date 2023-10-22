@@ -6,16 +6,21 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:58:10 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/19 17:03:24 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/10/22 16:18:14 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
+	char	*temp;
+
+	temp = (char *)s;
 	while (n > 0)
 	{
-		*s = '\0';
-		s++;
+		*temp = '\0';
+		temp++;
 		n--;
 	}
 }
