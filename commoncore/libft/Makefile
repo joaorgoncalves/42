@@ -6,7 +6,7 @@
 #    By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/22 15:36:34 by jrosa-go          #+#    #+#              #
-#    Updated: 2023/10/22 16:06:33 by jrosa-go         ###   ########.fr        #
+#    Updated: 2023/10/23 15:59:46 by jrosa-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,10 @@ OBJS = ft_isalpha.o \
 		ft_tolower.o \
 		ft_strchr.o \
 		ft_strrchr.o \
-		ft_strncmp.o
+		ft_strncmp.o \
+		ft_memchr.o \
+		ft_memcmp.o \
+		ft_strnstr.o
 
 NAME = libft.a
 
