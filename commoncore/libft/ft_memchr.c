@@ -6,22 +6,24 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:25:13 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/22 21:29:43 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:31:59 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfh.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	char * stemp;
 
 	i = 0;
-	while (s[i])
+	stemp = (char *)s;
+	while (stemp[i] || i < n)
 	{
-		if (s[i] == (char)c)
+		if (stemp[i] == (char)c)
 		{
-			return (&s[i]);
+			return ((void *)&s[i]);
 		}
 		i++;
 	}

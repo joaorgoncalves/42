@@ -6,7 +6,7 @@
 /*   By: jrosa-go <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:31:38 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/23 15:56:19 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:41:47 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	comp = 0;
 	if (!little)
 	{
-		return (big);
+		return ((char *)big);
 	}
 	while (big || i < len)
 	{
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			if (little[comp + 1] == '\0')
 			{
-				return (&big[i + comp]);
+				return ((char *)&big[i + comp]);
 			}
 			comp++;
 		}
