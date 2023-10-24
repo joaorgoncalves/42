@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:31:59 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/23 16:39:00 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:24:27 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*s1temp;
 	unsigned char	*s2temp;
 
