@@ -6,7 +6,7 @@
 /*   By: jrosa-go <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:58:55 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/27 16:24:05 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:32:40 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[start]))
+	while (ft_strchr(set, s1[start++]))
 	{
-		start++;
 	}
-	while (ft_strchr(set, s1[end]))
+	while (ft_strchr(set, s1[end--]))
 	{
-		end--;
 	}
 	trimmedstr = (char *)malloc(sizeof(char) * (end - start));
+	if (!trimmedstr)
+	{
+		return (NULL);
+	}
 	while (end <= start)
 	{
-		trimmedstr[i] = s1[start];
-		start++;
-		i++;
+		trimmedstr[i++] = s1[start++];
 	}
 	trimmedstr[i] = '\0';
 	return (trimmedstr);
