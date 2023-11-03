@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:25:13 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/24 10:38:16 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:37:48 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	stemp = (char *)s;
-	while (stemp[i] || i < n)
+	while (i < n)
 	{
-		if (stemp[i] == (char)c)
+		if ((unsigned char)stemp[i] == (unsigned char)c)
 		{
 			return ((void *)&s[i]);
 		}

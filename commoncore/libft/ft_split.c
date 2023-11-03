@@ -6,7 +6,7 @@
 /*   By: jrosa-go <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:39 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/27 17:28:31 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:41:53 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 	{
 		j = 0;
 		wodlen = wordlen(&s[x], c);
-		matrix[i] = (char)malloc(sizeof(char) * wordlen(&s[x]);
+		matrix[i] = (char)malloc(sizeof(char) * wordlen(&s[x]));
 		if (!matri[i])
 		{
 			return (NULL);

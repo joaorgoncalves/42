@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 22:38:36 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/22 16:31:57 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:00:02 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 		{
 			return ((char *)&s[strlen]);
 		}
-		strlen++;
+		strlen--;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 22:00:33 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/22 16:36:30 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:40:09 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dstsize;
 	size_t	i;
+	size_t	j;
 
-	dstsize = ft_strlen(dst);
 	i = 0;
-	while (i < size - dstsize - 1 || src[i] != '\0')
+	j = 0;
+
+	while (dst[i] && i < size)
 	{
-		dst[i + dstsize] = src[i];
 		i++;
 	}
-	dst[i + dstsize] = '\0';
-	return (dstsize + i);
+	while (src[j] && (i + j + 1) < size)
+	{
+		dst[i + j] = src [j];
+		j++;
+	}
+	if (i < size)
+	{
+		dst[i + j] = '\0';
+	}
+	return (i + ft_strlen(src));
 }
