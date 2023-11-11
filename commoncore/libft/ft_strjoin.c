@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:59:40 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/24 18:11:46 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:50:13 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		newstr[inew++] = s2[i++];
 	}
-	newstr[inew + 1] = '\0';
+	newstr[inew] = '\0';
 	return (newstr);
 }
