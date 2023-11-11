@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 22:38:36 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/02 16:00:02 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:10:55 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	strlen = ft_strlen(s);
 	while (strlen >= 0)
 	{
-		if (s[strlen] == c)
+		if ((unsigned char)s[strlen] == (unsigned char)c)
 		{
 			return ((char *)&s[strlen]);
 		}
