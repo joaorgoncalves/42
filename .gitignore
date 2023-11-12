@@ -50,5 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-piscine/.vscode/tasks.json
-piscine/.vscode/launch.json
+
+#temp files
+*~
+*.swp
+
+#OSX files
+.DS_Store
