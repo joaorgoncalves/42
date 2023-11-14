@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:08:28 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/27 16:23:03 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:56:52 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif
