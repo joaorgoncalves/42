@@ -6,7 +6,7 @@
 /*   By: jrosa-go <joaorgoncalvesp@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:39 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/13 13:09:18 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:55:46 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,29 @@ int	wordcount(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	char	*start;
-	char	*end;
 	char	**matrix;
-	int		nwords;
 	int		i;
 
-	start = (char *)s;
 	i = 0;
-	nwords = wordcount(s, c);
-	matrix = (char**)malloc(nwords * sizeof(char *));
+	matrix = (char**)malloc(wordcount(s, c) * sizeof(char *));
 	if (!matrix)
 	{
 		return (NULL);
 	}
-	while (i < nwords)
+	while (*s)
 	{
-		while (start[0] == c)
+		while (*s == c)
 		{
-			start++;
+			s++;
 		}
-		end = ft_strchr(start, c);
-		if (!end)
+		if (*s)
 		{
-			end = ft_strchr(start, '\0');
+			matrix[i] = ft_substr(s, 0, wordsize(s, c));
 		}
-		matrix[i] = (char *)malloc((end - start) * sizeof(char));
-		if (!matrix[i])
+		while (*s && *s != c)
 		{
-			return (NULL);
+			s++;
 		}
-		ft_strlcpy(matrix[i], start, end - start + 1);
-		start = end;
-		i++;
 	}
 	return (matrix);
 }
@@ -76,7 +66,19 @@ int	wordcount(char const *s, char c)
 	return (nwords);
 }
 
-int	main(void)
+int	wordsize(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != c)
+	{
+		i++;
+	}
+	return (i);
+}
+
+/*int	main(void)
 {
 	int i, j = 0;
 	char	**matrix = ft_split("isto e um teste simples", ' ');
@@ -91,4 +93,4 @@ int	main(void)
 		printf("\n");
 		i++;
 	}
-}
+}*/
