@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:13:35 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/11 17:07:16 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/14 22:13:30 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*endstr;
 
 	start = 0;
-	if(!s1)
+	if (!s1)
 	{
 		return (NULL);
 	}
-	if(!set)
+	if (!set)
 	{
 		return (ft_strdup(s1));
 	}

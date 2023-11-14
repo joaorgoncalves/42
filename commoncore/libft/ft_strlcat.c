@@ -6,7 +6,7 @@
 /*   By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 22:00:33 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/02 14:40:09 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/14 22:13:52 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-
 	while (dst[i] && i < size)
 	{
 		i++;
