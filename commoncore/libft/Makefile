@@ -6,7 +6,7 @@
 #    By: jrosa-go <jrosa-go@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/22 15:36:34 by jrosa-go          #+#    #+#              #
-#    Updated: 2023/11/14 20:58:13 by jrosa-go         ###   ########.fr        #
+#    Updated: 2023/11/18 17:38:14 by jrosa-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,24 @@ OBJS = ft_isalpha.o \
 		ft_substr.o \
 		ft_strjoin.o \
 		ft_strtrim.o \
-		ft_split.o
+		ft_split.o \
+		ft_itoa.o \
+		ft_strmapi.o \
+		ft_striteri.o \
+		ft_putchar_fd.o \
+		ft_putstr_fd.o \
+		ft_putendl_fd.o \
+		ft_putnbr_fd.o
+
+BONUS = ft_lstnew.o \
+		ft_lstadd_front.o \
+		ft_lstsize.o \
+		ft_lstlast.o \
+		ft_lstadd_back.o \
+		ft_lstdelone.o \
+		ft_lstclear.o \
+		ft_lstiter.o \
+		ft_lstmap.o
 
 NAME = libft.a
 
@@ -44,6 +61,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $^
+
+bonus: $(OBJS) $(BONUS)
+	ar -rcs $(NAME) $(OBJS) $(BONUS)
 
 %.o: %.c
 	cc -c -Wall -Werror -Wextra $<

@@ -6,7 +6,7 @@
 /*   By: jrosa-go <joaorgoncalvesp@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:39 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/14 22:19:38 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/17 22:41:27 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,3 @@ int	wordsize(char const *s, char c)
 	}
 	return (i);
 }
-
-/*int	main(void)
-{
-	int i = 0;
-	int j;
-	char	**matrix = ft_split("  lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
-	
-	while (matrix[i])
-	{
-		j = 0;
-		while(matrix[i][j])
-		{
-			printf("%c",matrix[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-}*/
