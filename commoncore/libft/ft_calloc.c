@@ -6,7 +6,7 @@
 /*   By: jrosa-go <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:47:39 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/10/23 17:09:27 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:57:32 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return (NULL);
 	}
-	ft_bzero(ptr, nmemb);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
