@@ -6,7 +6,7 @@
 /*   By: jrosa-go <joaorgoncalvesp@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:39 by jrosa-go          #+#    #+#             */
-/*   Updated: 2023/11/17 22:41:27 by jrosa-go         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:36:50 by jrosa-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	matrix = (char **)malloc((wordcount(s, c) + 1) * sizeof(char *));
+	matrix = (char **)malloc(sizeof(char *) * (wordcount(s, c) + 1));
 	if (!matrix)
 	{
 		return (NULL);
@@ -49,15 +49,13 @@ int	wordcount(char const *s, char c)
 	nwords = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] != c && s[i] != '\0')
-		{
-			i++;
-		}
-		if (s[i + 1] != c)
+		if (s[i] != c)
 		{
 			nwords++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
 		}
-		while (s[i] == c && s[i] != '\0')
+		else
 		{
 			i++;
 		}
@@ -70,7 +68,7 @@ int	wordsize(char const *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] != c)
+	while (s[i] != c && s[i])
 	{
 		i++;
 	}
