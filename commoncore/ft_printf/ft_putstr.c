@@ -17,10 +17,9 @@ int	ft_putstr(char *s)
 	int	count;
 
 	count = 0;
-	while (s)
+	while (s[count])
 	{
-		write(1, &s, 1);
-		s++;
+		write(1, &s[count], 1);
 		count++;
 	}
 	return (count);

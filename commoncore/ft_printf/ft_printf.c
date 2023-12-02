@@ -27,7 +27,7 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%')
 		{
-			printlen += conversion_checker(&s[i], lst);
+			printlen += conversion_checker(&s[++i], lst);
 			i++;
 		}
 		else
@@ -37,6 +37,7 @@ int	ft_printf(const char *s, ...)
 			printlen++;
 		}
 	}
+	va_end(lst);
 	return (printlen);
 }
 
@@ -45,23 +46,23 @@ int	conversion_checker(const char *s, va_list lst)
 	int	printlen;
 
 	printlen = 0;
-	if (s[1] == 'c')
+	if (s[0] == 'c')
 		printlen += ft_putchar(va_arg(lst, int));
-	else if (s[1] == 's')
+	else if (s[0] == 's')
 		printlen += ft_putstr(va_arg(lst, char *));
-	else if (s[1] == 'p')
+	else if (s[0] == 'p')
 		printlen += ft_putptr(va_arg(lst, unsigned long));
-	else if (s[1] == 'd')
+	else if (s[0] == 'd')
 		printlen += ft_putnbr(va_arg(lst, int));
-	else if (s[1] == 'i')
+	else if (s[0] == 'i')
 		printlen += ft_putnbr(va_arg(lst, int));
-	else if (s[1] == 'u')
+	else if (s[0] == 'u')
 		printlen += ft_putunbr(va_arg(lst, unsigned int));
-	else if (s[1] == 'x')
+	else if (s[0] == 'x')
 		printlen += ft_puthex(va_arg(lst, unsigned int), "0123456789abcdef");
-	else if (s[1] == 'X')
+	else if (s[0] == 'X')
 		printlen += ft_puthex(va_arg(lst, unsigned int), "0123456789ABCDEF");
-	else if (s[1] == '%')
+	else if (s[0] == '%')
 		printlen += ft_putchar('%');
 	return (printlen);
 }
