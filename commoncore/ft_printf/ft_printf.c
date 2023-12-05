@@ -59,9 +59,9 @@ int	conversion_checker(const char *s, va_list lst)
 	else if (s[0] == 'u')
 		printlen += ft_putunbr(va_arg(lst, unsigned int));
 	else if (s[0] == 'x')
-		printlen += ft_puthex(va_arg(lst, unsigned int), "0123456789abcdef");
+		printlen += ft_puthex(va_arg(lst, unsigned long), "0123456789abcdef");
 	else if (s[0] == 'X')
-		printlen += ft_puthex(va_arg(lst, unsigned int), "0123456789ABCDEF");
+		printlen += ft_puthex(va_arg(lst, unsigned long), "0123456789ABCDEF");
 	else if (s[0] == '%')
 		printlen += ft_putchar('%');
 	return (printlen);
