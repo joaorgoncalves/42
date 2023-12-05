@@ -12,28 +12,24 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putnbr(long n, char *base)
 {
 	int	count;
 
 	count = 0;
-	if (n == -2147483648)
+	if (n < 0)
 	{
-		ft_putstr("-2147483648");
-		count = 11;
+		count += write(1, "-", 1);
+		n = -n;
 	}
-	else if (n < 0)
+	if (n >= (long)ft_strlen(base))
 	{
-		ft_putchar('-');
-		count++;
-		ft_putnbr(-n);
+		count += ft_putnbr(n / (long)ft_strlen(base), base);
+		count += write(1, &base[n % (long)ft_strlen(base)], 1);
 	}
-	else
+	else if (n < (long)ft_strlen(base))
 	{
-		if (n > 9)
-			ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
-		count++;
+		count += write(1, &base[n], 1);
 	}
 	return (count);
 }

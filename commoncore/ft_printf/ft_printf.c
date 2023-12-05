@@ -52,16 +52,14 @@ int	conversion_checker(const char *s, va_list lst)
 		printlen += ft_putstr(va_arg(lst, char *));
 	else if (s[0] == 'p')
 		printlen += ft_putptr(va_arg(lst, unsigned long));
-	else if (s[0] == 'd')
-		printlen += ft_putnbr(va_arg(lst, int));
-	else if (s[0] == 'i')
-		printlen += ft_putnbr(va_arg(lst, int));
+	else if (s[0] == 'd' || s[0] == 'i')
+		printlen += ft_putnbr(va_arg(lst, int), "0123456789");
 	else if (s[0] == 'u')
 		printlen += ft_putunbr(va_arg(lst, unsigned int));
 	else if (s[0] == 'x')
-		printlen += ft_puthex(va_arg(lst, unsigned long), "0123456789abcdef");
+		printlen += ft_putnbr(va_arg(lst, unsigned int), "0123456789abcdef");
 	else if (s[0] == 'X')
-		printlen += ft_puthex(va_arg(lst, unsigned long), "0123456789ABCDEF");
+		printlen += ft_putnbr(va_arg(lst, unsigned int), "0123456789ABCDEF");
 	else if (s[0] == '%')
 		printlen += ft_putchar('%');
 	return (printlen);

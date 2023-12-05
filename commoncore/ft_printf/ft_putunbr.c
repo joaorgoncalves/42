@@ -14,12 +14,19 @@
 
 int	ft_putunbr(unsigned int n)
 {
-	int	count;
+	int		count;
+	char	*base;
 
+	base = "0123456789";
 	count = 0;
-	if (n > 9)
-		ft_putunbr(n / 10);
-	ft_putchar(n % 10 + '0');
-	count++;
+	if (n >= 10)
+	{
+		count += ft_putunbr(n / 10);
+		count += write(1, &base[n % 10], 1);
+	}
+	else if (n < 10)
+	{
+		count += write(1, &base[n], 1);
+	}
 	return (count);
 }
